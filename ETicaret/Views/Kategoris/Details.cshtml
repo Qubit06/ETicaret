@@ -1,0 +1,67 @@
+﻿@model ETicaret.Models.Kategori
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/AdminHome.cshtml";
+}
+
+<h2>Kategori Detay</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KategoriAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aktif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aktif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OlusturulmaTarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OlusturulmaTarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OlusturanKullaniciID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OlusturanKullaniciID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuncellemeTarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuncellemeTarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuncellemeKullaniciID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuncellemeKullaniciID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Güncelle", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ETicaret.Models.SepetUrunler>
+
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/UserHome.cshtml";
+}
+
+<h2>Details</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    { 
+        <div class="col-4">
+            <div class="card">
+                <img src=@item.Urun.ResimUrl class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Urun.Marka @item.Urun.Model</h5>
+                    <p class="card-text">@item.Urun.Aciklama</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">@item.Urun.BirimFiyat TL</li>
+                    <li class="list-group-item">Stokta @item.Urun.StokAdet kaldı</li>
+                </ul>
+            </div>
+        </div>
+
+
+    }
+
+</div>

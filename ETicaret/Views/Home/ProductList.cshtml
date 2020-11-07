@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ETicaret.Models.Urun>
+
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/UserHome.cshtml";
+}
+
+<h2>Ürünler</h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        if (item.StokAdet > 0)
+        {
+            <div class="col-2">
+
+                <div class="card">
+                    <img src=@item.ResimUrl class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Marka @item.Model</h5>
+                        <p class="card-text">@item.Aciklama</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">@item.BirimFiyat TL</li>
+                        <li class="list-group-item">Stokta @item.StokAdet kaldı</li>
+                    </ul>
+                    <div class="card-body">
+                        @Html.ActionLink("Sepete Ekle", "BasketAdd", new { ID = item.ID })
+
+
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+    }
+
+</div>
+

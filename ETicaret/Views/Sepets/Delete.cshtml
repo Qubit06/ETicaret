@@ -1,0 +1,73 @@
+﻿@model ETicaret.Models.Sepet
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/UserHome.cshtml";
+}
+
+<h3>Sepeti Boşalt</h3>
+
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KullaniciID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KullaniciID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Durum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Durum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OlusturulmaTarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OlusturulmaTarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OlusturanKullaniciID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OlusturanKullaniciID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuncellemeTarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuncellemeTarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuncellemeKullaniciID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuncellemeKullaniciID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sepeti Boşalt" class="btn btn-default" /> 
+         
+        </div>
+    }
+</div>

@@ -1,0 +1,100 @@
+﻿@model IEnumerable<ETicaret.Models.Kullanici>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminHome.cshtml";
+}
+
+<h2>Kullanıcı Liste</h2>
+
+<p>
+    @Html.ActionLink("Kullanıcı Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aktif)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Admin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OlusturulmaTarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OlusturanKullaniciID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuncellemeTarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuncellemeKullaniciID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefonNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sifre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aktif)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Admin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OlusturulmaTarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OlusturanKullaniciID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuncellemeTarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuncellemeKullaniciID)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

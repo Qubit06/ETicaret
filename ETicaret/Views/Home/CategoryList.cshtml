@@ -1,0 +1,19 @@
+﻿@model IEnumerable<ETicaret.Models.Kategori>
+
+@{
+    ViewBag.Title = "CategoryList";
+    Layout = "~/Views/Shared/UserHome.cshtml";
+}
+<style>
+
+    a {
+        color: black;
+    }
+</style>
+<h2>Kategoriler</h2>
+
+@foreach (var item in Model)
+{
+    @Html.ActionLink(item.KategoriAd, "ProductList/" + item.ID, "Home") 
+    <br />
+}

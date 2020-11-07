@@ -1,0 +1,115 @@
+﻿@model IEnumerable<ETicaret.Models.Urun>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminHome.cshtml";
+}
+
+<h2>Ürün Liste</h2>
+
+<p>
+    @Html.ActionLink("Ürün Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        
+      
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResimUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirimFiyat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KDV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Indirim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StokAdet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aktif)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OlusturulmaTarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OlusturanKullaniciID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuncellemeTarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuncellemeKullaniciID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marka)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResimUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirimFiyat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KDV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Indirim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StokAdet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aktif)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OlusturulmaTarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OlusturanKullaniciID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuncellemeTarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuncellemeKullaniciID)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

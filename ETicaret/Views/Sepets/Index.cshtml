@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ETicaret.Models.Sepet>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/UserHome.cshtml";
+}
+
+<h2>Sepet</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KullaniciID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Durum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OlusturulmaTarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OlusturanKullaniciID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuncellemeTarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuncellemeKullaniciID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KullaniciID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Durum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OlusturulmaTarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OlusturanKullaniciID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuncellemeTarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuncellemeKullaniciID)
+        </td>
+        <td>
+            @Html.ActionLink("Onayla", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Ürünleri Gör", "Details", new { id = item.ID }) |
+            @Html.ActionLink("İptal", "Delete", new { id = item.ID }) |
+
+        </td>
+    </tr>
+}
+
+</table>
